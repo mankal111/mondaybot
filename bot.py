@@ -1,6 +1,10 @@
 import requests
 from telegram.ext import Updater, MessageHandler, Filters
+import os
 
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+MONDAY_TOKEN = os.environ.get("MONDAY_TOKEN")
+BOARD_ID = int(os.environ.get("BOARD_ID"))
 
 def get_task_info(task_name):
     url = "https://api.monday.com/v2"
